@@ -1,0 +1,88 @@
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\roslyn\csc.exe
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\roslyn\vbc.exe
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\roslyn\VBCSCompiler.exe
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\AutomatedCR.dll.config
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\AutomatedCR.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\AutomatedCR.pdb
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\Antlr3.Runtime.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\EntityFramework.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\EntityFramework.SqlServer.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\Newtonsoft.Json.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Helpers.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Mvc.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Optimization.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Razor.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.WebPages.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.WebPages.Razor.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\WebGrease.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\EntityFramework.xml
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\EntityFramework.SqlServer.xml
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Helpers.xml
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Mvc.xml
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Optimization.xml
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Razor.xml
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.WebPages.xml
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\System.Web.WebPages.Razor.xml
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\Antlr3.Runtime.pdb
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\bin\Newtonsoft.Json.xml
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\obj\Debug\AutomatedCR.dll
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\obj\Debug\AutomatedCR.pdb
+C:\Users\Zaber\Documents\Visual Studio 2015\Projects\AutomatedCR\AutomatedCR\obj\Debug\AutomatedCR.csprojResolveAssemblyReference.cache
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\roslyn\csc.exe
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\roslyn\System.Collections.Immutable.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\roslyn\System.Reflection.Metadata.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\roslyn\vbc.exe
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\roslyn\VBCSCompiler.exe
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\roslyn\VBCSCompiler.exe.config
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\AutomatedCR.dll.config
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\AutomatedCR.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\AutomatedCR.pdb
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\Antlr3.Runtime.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\EntityFramework.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\EntityFramework.SqlServer.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\Microsoft.Web.Infrastructure.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\Newtonsoft.Json.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Helpers.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Mvc.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Optimization.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Razor.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.WebPages.Deployment.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.WebPages.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.WebPages.Razor.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\WebGrease.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\EntityFramework.xml
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\EntityFramework.SqlServer.xml
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Helpers.xml
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Mvc.xml
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Optimization.xml
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.Razor.xml
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.WebPages.xml
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.WebPages.Deployment.xml
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\System.Web.WebPages.Razor.xml
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\Antlr3.Runtime.pdb
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\bin\Newtonsoft.Json.xml
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\obj\Debug\AutomatedCR.csprojResolveAssemblyReference.cache
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\obj\Debug\AutomatedCR.dll
+F:\Workspace\Personal\RnD\Dot Net\Projects\AutomatedCR\AutomatedCR\obj\Debug\AutomatedCR.pdb
