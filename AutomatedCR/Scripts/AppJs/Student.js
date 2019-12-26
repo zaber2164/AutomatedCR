@@ -12,6 +12,7 @@
         var cell = $(this).closest('td');
         var stdId = $row.find("#hdnId").val();
         StudentId = stdId;
+        window.localStorage.setItem('StudentId', stdId);
         var url = "/Student/GetStudentById";
         $.ajax({
             type: "POST",
@@ -111,7 +112,8 @@
             (month < 10 ? '0' : '') + month + '/' +
             (day < 10 ? '0' : '') + day;
 
-        obj.StudentId = StudentId;
+        //obj.StudentId = StudentId;
+        obj.StudentId = window.localStorage.getItem('StudentId');
         obj.Name = $('#Name').val();
         obj.Email = $('#Email').val();
         obj.PhoneNumber = $('#PhoneNumber').val();
@@ -210,7 +212,7 @@
     }
 
 });
-function GetDataById(StudentId) {
+function GetDataById(StdId) {
 
     var url = "/Student/GetStudentById";
     $.ajax({
@@ -219,11 +221,13 @@ function GetDataById(StudentId) {
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
         async: true,
-        data: "{'Id':'" + StudentId + "'}",
+        data: "{'Id':'" + StdId + "'}",
         success: function (result) {
             debugger;
             var output = $.parseJSON(result);
 
+            window.localStorage.setItem('StudentId', StdId);
+            //alert(window.localStorage.getItem('StudentId'));
             var Name = output.Name;
             var Email = output.Email;
             var PhoneNumber = output.PhoneNumber;
