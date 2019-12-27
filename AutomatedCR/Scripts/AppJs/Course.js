@@ -163,7 +163,7 @@
         debugger;
         $.ajax({
             type: "POST",
-            url: 'Course/UpdateTableData',
+            url: '/Course/UpdateTableData',
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             async: true,

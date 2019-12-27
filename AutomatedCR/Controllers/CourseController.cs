@@ -26,8 +26,6 @@ namespace AutomatedCR.Controllers
                 {
                     return View(new List<Course>());
                 }
-
-                //return View(studentList);
             }
             catch (Exception e)
             {
