@@ -10,9 +10,9 @@
         }
 
         var cell = $(this).closest('td');
-        var stdId = $row.find("#hdnId").val();
-        CourseId = stdId;
-        window.localStorage.setItem('StudentId', stdId);
+        var crsId = $row.find("#hdnId").val();
+        CourseId = crsId;
+        window.localStorage.setItem('CourseId', crsId);
         var url = "/Course/GetCourseById";
         $.ajax({
             type: "POST",
@@ -20,18 +20,18 @@
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             async: true,
-            data: "{'Id':'" + stdId + "'}",
+            data: "{'Id':'" + crsId + "'}",
             success: function (result) {
                 debugger;
                 var output = $.parseJSON(result);
 
-                var Name = output.Name;
-                var Email = output.Email;
-                var PhoneNumber = output.PhoneNumber;
+                var Title = output.Title;
+                var Semester = output.Semester;
+                var Location = output.Location;
 
-                $('#Name').val(Name);
-                $('#Email').val(Email);
-                $('#PhoneNumber').val(PhoneNumber);
+                $('#Title').val(Title);
+                $('#Semester').val(Semester);
+                $('#Location').val(Location);
 
                 $('#UpdateModalForm').modal('show');
 
@@ -94,7 +94,7 @@
         obj.Semester = $('#addSemester').val();
         obj.Location = $('#addLocation').val();
         //obj.UpdatedDate = currentdate;
-        //obj.UpdatedBy = StudentId;
+        //obj.UpdatedBy = CourseId;
 
         return obj;
     }
@@ -112,13 +112,13 @@
             (month < 10 ? '0' : '') + month + '/' +
             (day < 10 ? '0' : '') + day;
 
-        //obj.StudentId = StudentId;
-        obj.StudentId = window.localStorage.getItem('StudentId');
-        obj.Name = $('#Name').val();
-        obj.Email = $('#Email').val();
-        obj.PhoneNumber = $('#PhoneNumber').val();
-        obj.UpdatedDate = currentdate;
-        obj.UpdatedBy = StudentId;
+        //obj.CourseId = CourseId;
+        obj.CourseId = window.localStorage.getItem('CourseId');
+        obj.Title = $('#Title').val();
+        obj.Semester = $('#Semester').val();
+        obj.Location = $('#Location').val();
+        //obj.UpdatedDate = currentdate;
+        //obj.UpdatedBy = CourseId;
 
         return obj;
     }
@@ -212,7 +212,7 @@
     }
 
 });
-function GetDataById(StdId) {
+function GetDataById(crsId) {
 
     var url = "/Course/GetCourseById";
     $.ajax({
@@ -221,19 +221,19 @@ function GetDataById(StdId) {
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
         async: true,
-        data: "{'Id':'" + StdId + "'}",
+        data: "{'Id':'" + crsId + "'}",
         success: function (result) {
             debugger;
             var output = $.parseJSON(result);
 
-            window.localStorage.setItem('StudentId', StdId);
-            var Name = output.Name;
-            var Email = output.Email;
-            var PhoneNumber = output.PhoneNumber;
+            window.localStorage.setItem('CourseId', crsId);
+            var Title = output.Title;
+            var Semester = output.Semester;
+            var Location = output.Location;
 
-            $('#Name').val(Name);
-            $('#Email').val(Email);
-            $('#PhoneNumber').val(PhoneNumber);
+            $('#Title').val(Title);
+            $('#Semester').val(Semester);
+            $('#Location').val(Location);
 
             $('#UpdateModalForm').modal('show');
 
