@@ -13,6 +13,25 @@
         var crsId = $row.find("#hdnId").val();
         CourseId = crsId;
         window.localStorage.setItem('CourseId', crsId);
+        $('#Teacher').select2({
+            placeholder: "Select Teacher",
+            width: 'resolve',
+            ajax: {
+                url: '/Course/LoadDdlTeacher',
+                dataType: 'json',
+                processResults: function (data) {
+                    debugger
+                    // Transforms the top-level key of the response object from 'items' to 'results'
+                    var data_array = [];
+                    data.forEach(function (value, key) {
+                        data_array.push({ id: value.TeacherId, text: value.Name })
+                    });
+                    return {
+                        results: data_array
+                    };
+                }
+            }
+        });
         var url = "/Course/GetCourseById";
         $.ajax({
             type: "POST",
@@ -28,10 +47,13 @@
                 var Title = output.Title;
                 var Semester = output.Semester;
                 var Location = output.Location;
+                var TeacherId = output.TeacherId;
 
                 $('#Title').val(Title);
                 $('#Semester').val(Semester);
                 $('#Location').val(Location);
+                //$('#Teacher').val(TeacherId);
+                $('#Teacher').select2('data', { id: TeacherId, text: 'test' });
 
                 $('#UpdateModalForm').modal('show');
 
@@ -51,7 +73,25 @@
     $('.new-Course')
     .on('click',
         function () {
-            //$('#addcanteen').select2({ placeholder: "Select Canteen" });
+            $('#addTeacher').select2({
+                placeholder: "Select Teacher",
+                width: 'resolve',
+                ajax: {
+                    url: '/Course/LoadDdlTeacher',
+                    dataType: 'json',
+                    processResults: function (data) {
+                        debugger
+                        // Transforms the top-level key of the response object from 'items' to 'results'
+                        var data_array = [];
+                        data.forEach(function (value, key) {
+                            data_array.push({ id: value.TeacherId, text: value.Name })
+                        });
+                        return {
+                            results: data_array
+                        };
+                    }
+                }
+            });
             $('#AddModalForm').modal('show');
             //loadCanteenNameCombo('#addcanteen');
             $('#tablecontainer').hide();
@@ -93,6 +133,7 @@
         obj.Title = $('#addName').val();
         obj.Semester = $('#addSemester').val();
         obj.Location = $('#addLocation').val();
+        obj.TeacherId = $("#addTeacher").val();
         //obj.UpdatedDate = currentdate;
         //obj.UpdatedBy = CourseId;
 
@@ -117,6 +158,7 @@
         obj.Title = $('#Title').val();
         obj.Semester = $('#Semester').val();
         obj.Location = $('#Location').val();
+        //obj.TeacherId = $("#addTeacher").val();
         //obj.UpdatedDate = currentdate;
         //obj.UpdatedBy = CourseId;
 

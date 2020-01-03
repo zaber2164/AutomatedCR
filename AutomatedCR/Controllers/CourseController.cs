@@ -118,5 +118,22 @@ namespace AutomatedCR.Controllers
                 return Json(e.Message, JsonRequestBehavior.AllowGet);
             }
         }
+        public JsonResult LoadDdlTeacher()
+        {
+            try
+            {
+                List<Teacher> TeacherList =
+                    dbEntities.Teachers.ToList();
+                if (TeacherList.Count > 0)
+                {
+                    return Json(TeacherList,JsonRequestBehavior.AllowGet);
+                }
+                else return Json(new List<Teacher>(), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return Json(new List<Teacher>(), JsonRequestBehavior.AllowGet);
+            }
+        }
     }
 }
