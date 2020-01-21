@@ -1,7 +1,11 @@
-﻿
+﻿@using AutomatedCR.DbFile
+@model IEnumerable<Teacher>
+
 @{
-    ViewBag.Title = "Teacher";
+    ViewBag.Title = "Teacher Panel";
 }
+
+@*<h2>Employee</h2>*@
 
 <div class="main-content">
     <div class="section__content section__content--p30">
@@ -10,37 +14,79 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong>Teacher</strong> Entry Form
+                            <strong>Teacher</strong> List
                         </div>
-                        <div class="card-body card-block">
-                            <form action="" method="post" class="form-horizontal">
-                                <div class="row form-group">
-                                    <div class="col col-md-3">
-                                        <label for="hf-email" class=" form-control-label">Email</label>
-                                    </div>
-                                    <div class="col-12 col-md-9">
-                                        <input type="email" id="hf-email" name="hf-email" placeholder="Enter Email..." class="form-control">
-                                        @*<span class="help-block">Please enter your email</span>*@
-                                    </div>
+                        <div class="table-data__tool" style="padding-top:5px;padding-right:5px;margin-bottom: 0px;">
+                            <div class="table-data__tool-left">
+                            </div>
+                            <div class="table-data__tool-right">
+                                <button class="au-btn au-btn-icon au-btn--green au-btn--small new-Teacher">
+                                    <i class="zmdi zmdi-plus"></i>add item
+                                </button>
+                                <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                    <select class="js-select2" name="type">
+                                        <option selected="selected">Export</option>
+                                        <option value="">Option 1</option>
+                                        <option value="">Option 2</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
                                 </div>
-                                <div class="row form-group">
-                                    <div class="col col-md-3">
-                                        <label for="hf-password" class=" form-control-label">Password</label>
-                                    </div>
-                                    <div class="col-12 col-md-9">
-                                        <input type="password" id="hf-password" name="hf-password" placeholder="Enter Password..." class="form-control">
-                                        @*<span class="help-block">Please enter your password</span>*@
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         </div>
-                        <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-primary btn-sm">
-                                <i class="fa fa-dot-circle-o"></i> Submit
-                            </button>
-                            <button type="reset" class="btn btn-danger btn-sm">
-                                <i class="fa fa-ban"></i> Reset
-                            </button>
+                        <div class="card-body card-block" style="padding-top:0px;">
+                            <div class="row m-t-30">
+                                <div class="col-md-12">
+                                    <!-- DATA TABLE-->
+                                    <div class="table-responsive m-b-40" id="initialGrid">
+                                        <table class="table table-borderless table-data3" style="overflow-x:auto" id="Teacher-list">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width:30%">Teacher Name</th>
+                                                    <th style="width:20%">Email</th>
+                                                    <th style="width:25%">Phone Number</th>
+                                                    <th style="width:25%">Address</th>
+                                                    <th style="width:20%">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @item.Name
+                                                            <input type="hidden" value="@item.TeacherId" id="hdnId" class="hidden-CardMapId" />
+                                                        </td>
+                                                        <td>
+                                                            @item.Email
+                                                        </td>
+                                                        <td>
+                                                            @item.PhoneNumber
+                                                        </td>
+                                                        <td>
+                                                            @item.Address
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="table-data-feature">
+
+                                                                <button class="item Teacher-update" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                    <i class="zmdi zmdi-edit"></i>
+                                                                </button>
+                                                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                    <i class="zmdi zmdi-delete"></i>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div id="updatedTable" class="table-responsive m-b-40">
+                                    </div>
+                                    <!-- END DATA TABLE-->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -55,4 +101,135 @@
         </div>
     </div>
 </div>
+<div id="employee-detail-Modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header modal-header-success">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title"><i class="fa fa-globe"></i></h4>
+            </div>
+            <div class="modal-body" style="overflow-y: scroll;max-height: 400px;">
 
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<div class="modal fade" id="AddModalForm" role="dialog" aria-labelledby="AddModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="max-height: 400px;">
+                <div class="container body" id="purchase-form-vendor">
+                    <div class="main_container">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2 class="custom-header">
+                                    Add New Teacher Info
+                                </h2>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+
+                                <form role="form" id="purhcase-entry-form">
+                                    <div class="row" style="padding-top:30px;">
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                                            <label for="Name" class="col-sm-6-custom control-label"><strong>Name</strong></label>
+                                            <input type="hidden" id="hdnName" class="hdnName" />
+                                            <input type="text" id="addName" name="Name" placeholder="Teacher Name" class="form-control" autocomplete="off">
+
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                                            <label for="Email" class="col-sm-6-custom control-label"><strong>Email</strong></label>
+                                            <input type="text" id="addEmail" name="Email" placeholder="Email" class="form-control">
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                                            <label for="PhoneNumber" class="col-sm-6-custom control-label"><strong>Phone Number</strong></label>
+                                            <input type="text" id="addPhoneNumber" name="PhoneNumber" placeholder="Phone Number" class="form-control">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-default btn-sm ">Close</button>
+                @*<a id="settings" class="btn btn-primary btn-sm add">Save changes</a>*@
+                <input type="button" value="Save changes" id="settings" class="btn btn-primary btn-sm add" style="color:#fff">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="UpdateModalForm" role="dialog" aria-labelledby="UpdateModalForm">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style=" max-height 400px;">
+                <div class="container body" id="purchase-form-vendor">
+                    <div class="main_container">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2 class="custom-header">
+                                    Update Teacher Info
+                                </h2>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="x_content">
+
+                                <form role="form" id="purhcase-entry-form">
+                                    <div class="row" style="padding-top:30px;">
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                                            <label for="Name" class="col-sm-6-custom control-label"><strong>Name</strong></label>
+                                            <input type="hidden" id="hdnName" class="hdnName" />
+                                            <input type="text" id="Name" name="Name" placeholder="Teacher Name" class="form-control" autocomplete="off">
+
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                                            <label for="Email" class="col-sm-6-custom control-label"><strong>Email</strong></label>
+                                            <input type="text" id="Email" name="Email" placeholder="Email" class="form-control">
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                                            <label for="PhoneNumber" class="col-sm-6-custom control-label"><strong>Phone Number</strong></label>
+                                            <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" class="form-control">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-default btn-sm ">Close</button>
+                @*<a id="settings" class="btn btn-primary btn-sm Update" style="color:#fff">Save changes</a>*@
+                <input type="button" value="Save changes" id="settings" class="btn btn-primary btn-sm Update" style="color:#fff">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+    {
+    <script src="~/Scripts/AppJs/Teacher.js" type="text/javascript"></script>
+    }

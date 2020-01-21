@@ -18,6 +18,10 @@ namespace AutomatedCR.Controllers
             {
                 List<Student> studentList =
                     dbEntities.Students.ToList();
+                if (studentList.Count==0 || studentList==null)
+                {
+                    studentList=new List<Student>();
+                }
 
                 return View(studentList);
             }

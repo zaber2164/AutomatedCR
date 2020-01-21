@@ -3,87 +3,118 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutomatedCR.DbFile;
+using Newtonsoft.Json;
 
 namespace AutomatedCR.Controllers
 {
     public class TeacherController : Controller
     {
+        private readonly AutomatedCrConnection dbEntities = new AutomatedCrConnection();
         // GET: Teacher
         public ActionResult Index()
         {
-            return View();
+            try
+            {
+                List<Teacher> teacherList =
+                    dbEntities.Teachers.ToList();
+                if (teacherList.Count == 0 || teacherList == null)
+                {
+                    teacherList = new List<Teacher>();
+                }
+
+                return View(teacherList);
+            }
+            catch (Exception e)
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        public ActionResult GetTeacherById(long Id)
+        {
+            try
+            {
+                Teacher std = dbEntities.Teachers.Where(e => e.TeacherId == Id).FirstOrDefault();
+
+                String data = JsonConvert.SerializeObject(std, Formatting.None);
+                return Json(data, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return Json(e.Message, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [HttpPost]
+        public ActionResult Add(Teacher Data)
+        {
+            try
+            {
+                //Int64 userid = Convert.ToInt32(Session["UserId"]);
+                if (Data != null)
+                {
+                    dbEntities.Teachers.Add(Data);
+                    dbEntities.SaveChanges();
+                    int id = Data.TeacherId;
+
+                    return Json("success", JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json("Data not found.", JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception e)
+            {
+                return Json(e.Message, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+        [HttpPost]
+        public ActionResult Update(Teacher Data)
+        {
+            try
+            {
+                //Int64 userid = Convert.ToInt32(Session["UserId"]);
+                if (Data != null)
+                {
+                    var Teacher = dbEntities.Teachers.FirstOrDefault(e => e.TeacherId == Data.TeacherId);
+
+                    Teacher.Name = Data.Name;
+                    Teacher.Email = Data.Email;
+                    Teacher.PhoneNumber = Data.PhoneNumber;
+                    Teacher.UpdatedDate = Data.UpdatedDate;
+                    Teacher.UpdatedBy = Data.UpdatedBy;
+
+                    dbEntities.SaveChanges();
+
+                    return Json("success", JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json("Data not found.", JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception e)
+            {
+                return Json(e.Message, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+        public ActionResult UpdateTableData()
+        {
+            try
+            {
+                List<Teacher> TeacherList =
+                    dbEntities.Teachers.ToList();
+
+                return Json(TeacherList, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return Json(e.Message, JsonRequestBehavior.AllowGet);
+            }
         }
 
-        //// GET: Teacher/Details/5
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
-
-        //// GET: Teacher/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
-
-        //// POST: Teacher/Create
-        //[HttpPost]
-        //public ActionResult Create(FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add insert logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        //// GET: Teacher/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-        //    return View();
-        //}
-
-        //// POST: Teacher/Edit/5
-        //[HttpPost]
-        //public ActionResult Edit(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add update logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        //// GET: Teacher/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
-
-        //// POST: Teacher/Delete/5
-        //[HttpPost]
-        //public ActionResult Delete(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add delete logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
     }
 }
