@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutomatedCR.DbFile;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace AutomatedCR.Controllers
 {
     public class SendMailerController : Controller
     {
+        private readonly AutomatedCrConnection dbEntities = new AutomatedCrConnection();
         // GET: SendMailer
         public ActionResult Index()
         {
