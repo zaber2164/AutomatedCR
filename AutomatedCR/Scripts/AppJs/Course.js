@@ -158,7 +158,7 @@
         obj.Title = $('#Title').val();
         obj.Semester = $('#Semester').val();
         obj.Location = $('#Location').val();
-        //obj.TeacherId = $("#addTeacher").val();
+        obj.TeacherId = $("#Teacher").val();
         //obj.UpdatedDate = currentdate;
         //obj.UpdatedBy = CourseId;
 
