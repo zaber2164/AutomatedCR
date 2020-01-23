@@ -60,9 +60,9 @@
                         </div>
                         <div class="card-body card-block">
                             @*<h2>Hi</h2>*@
-                            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                                <label for="addTeacher" class="col-sm-6-custom control-label"><strong>Teacher</strong></label>
-                                <select id="addTeacher" style="width:100%">
+                            <div class="col-md-3 col-sm-12 col-xs-12 form-group" style="float:left;">
+                                <label for="ddlTeacher" class="col-sm-6-custom control-label"><strong>Teacher</strong></label>
+                                <select id="ddlTeacher" style="width:100%;">
                                     <option value="">
                                                     
                                     </option>
@@ -72,7 +72,18 @@
                                     <option value='akilesh'>Akilesh Sahu</option>
                                 </select>
                             </div>
+                            <div class="col-md-3 col-sm-12 col-xs-12 form-group" style="float:left;">
+                                <label for="ddlCourse" class="col-sm-6-custom control-label"><strong>Course</strong></label>
+                                <select id="ddlCourse" style="width:100%">
+                                    <option value=""></option>
+                                    <option value='yogesh'>Yogesh Singh</option>
+                                    <option value='sonarika'>Sonarika Bhadoria</option>
+                                    <option value='anil'>Anil Singh</option>
+                                    <option value='akilesh'>Akilesh Sahu</option>
+                                </select>
+                            </div>
                         </div>
+                        
                         <div class="card-body card-block">
                             @using (Html.BeginForm("Index", "SendMailer", FormMethod.Post, new { @id = "form1", @enctype = "multipart/form-data", @class = "form-horizontal" }))
                             {

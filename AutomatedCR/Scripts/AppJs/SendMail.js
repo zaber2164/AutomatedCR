@@ -2,11 +2,15 @@
   if ('@ViewBag.Message' == 'Sent') {
     alert('Mail has been sent successfully');
   }
-  $('#addTeacher').select2({
+  $('#ddlTeacher').select2({
     placeholder: "Select Teacher",
     width: 'resolve'
   });
-  $('#addTeacher').change(function (){
+  $('#ddlTeacher').change(function (){
     alert($(this).val());
+  });
+  $('#ddlCourse').select2({
+      placeholder: "Select Course",
+      width: 'resolve'
   });
 });
