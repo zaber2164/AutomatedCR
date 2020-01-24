@@ -291,3 +291,29 @@ function GetDataById(crsId) {
             }
     });
 }
+
+function ShowReport() {
+    //alert('hi')
+    debugger
+    $.ajax({
+        type: "POST",
+        url: "/Course/ExportExcel",
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        async: true,
+        data: JSON.stringify({}),
+        success: function (result) {
+            debugger;
+            //var output = $.parseJSON(result);
+        },
+        error:
+            function (request, status, error) {
+                alert("Report job Failed. Error Details -  Request: " +
+                    request +
+                    ", Status: " +
+                    status +
+                    ", Error: " +
+                    error);
+            }
+    });
+}

@@ -23,14 +23,17 @@
                                 <button class="au-btn au-btn-icon au-btn--green au-btn--small new-Teacher">
                                     <i class="zmdi zmdi-plus"></i>add item
                                 </button>
-                                <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                @*<div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                     <select class="js-select2" name="type">
                                         <option selected="selected">Ex</option>
                                         <option value="">Excel</option>
                                         <option value="">Option 2</option>
                                     </select>
                                     <div class="dropDownSelect2"></div>
-                                </div>
+                                </div>*@
+                                <button class="btn btn-primary" onclick="location.href='@Url.Action("ExportExcel", "Teacher")'">
+                                    Excel
+                                </button>
                             </div>
                         </div>
                         <div class="card-body card-block" style="padding-top:0px;">

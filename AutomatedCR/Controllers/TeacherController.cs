@@ -5,6 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using AutomatedCR.DbFile;
 using Newtonsoft.Json;
+using System.ComponentModel;
+using System.Data;
+using System.IO;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace AutomatedCR.Controllers
 {
@@ -115,6 +120,55 @@ namespace AutomatedCR.Controllers
                 return Json(e.Message, JsonRequestBehavior.AllowGet);
             }
         }
+        public ActionResult ExportExcel()
+        {
+            List<Teacher> TeacherList =
+                dbEntities.Teachers.ToList();
+            //
+            DataTable dtRawData = ConvertToDataTable(TeacherList);
+            var grid = new GridView();
+            grid.DataSource = dtRawData;
+            grid.DataBind();
+            Response.ClearContent();
+            Response.Buffer = true;
+            string fileName = "Teacher" + "_" + DateTime.Now.ToString("yyyyMMdd HH:mm");
+            Response.AddHeader("content-disposition", "attachment; filename=" + fileName + ".xls");
+            Response.ContentType = "application/ms-excel";
+            Response.Charset = "";
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter htw = new HtmlTextWriter(sw);
+            grid.RenderControl(htw);
+            Response.Output.Write(sw.ToString());
+            Response.Flush();
+            Response.End();
+            return RedirectToAction("Index", "Teacher");
+        }
+        public DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection properties =
 
+            TypeDescriptor.GetProperties(typeof(T));
+
+            DataTable table = new DataTable();
+
+            foreach (PropertyDescriptor prop in properties)
+
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+
+            foreach (T item in data)
+
+            {
+                DataRow row = table.NewRow();
+
+                foreach (PropertyDescriptor prop in properties)
+
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+
+                table.Rows.Add(row);
+            }
+
+            return table;
+
+        } 
     }
 }

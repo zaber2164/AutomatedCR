@@ -5,6 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using AutomatedCR.DbFile;
 using Newtonsoft.Json;
+//using NsExcel = Microsoft.Office.Interop.Excel;
+using System.IO;
+using System.Web.UI.WebControls;
+using System.Web.UI;
+using System.Data;
+using System.ComponentModel;
 
 namespace AutomatedCR.Controllers
 {
@@ -134,6 +140,71 @@ namespace AutomatedCR.Controllers
             {
                 return Json(new List<Teacher>(), JsonRequestBehavior.AllowGet);
             }
+        }
+        //[HttpPost]
+        public ActionResult ExportExcel()
+        {
+            //try
+            //{
+                List<Course> courseList =
+                    dbEntities.Courses.ToList();
+                //
+                DataTable dtRawData = ConvertToDataTable(courseList);
+                var grid = new GridView();
+                grid.DataSource = dtRawData;
+                grid.DataBind();
+                Response.ClearContent();
+                Response.Buffer = true;
+                string fileName = "Course" + "_" + DateTime.Now.ToString("yyyyMMdd HH:mm");
+                Response.AddHeader("content-disposition", "attachment; filename=" + fileName + ".xls");
+                Response.ContentType = "application/ms-excel";
+                Response.Charset = "";
+                StringWriter sw = new StringWriter();
+                HtmlTextWriter htw = new HtmlTextWriter(sw);
+                grid.RenderControl(htw);
+                Response.Output.Write(sw.ToString());
+                Response.Flush();
+                Response.End();
+                return RedirectToAction("Course", "Course");
+                //return View("Course");
+
+                //return Json(courseList, JsonRequestBehavior.AllowGet);
+            //}
+            //catch (Exception e)
+            //{
+            //    return Json(e.Message, JsonRequestBehavior.AllowGet);
+            //}
+        }
+        public DataTable ConvertToDataTable<T>(IList<T> data)
+
+        {
+
+            PropertyDescriptorCollection properties =
+
+            TypeDescriptor.GetProperties(typeof(T));
+
+            DataTable table = new DataTable();
+
+            foreach (PropertyDescriptor prop in properties)
+
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+
+            foreach (T item in data)
+
+            {
+
+                DataRow row = table.NewRow();
+
+                foreach (PropertyDescriptor prop in properties)
+
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+
+                table.Rows.Add(row);
+
+            }
+
+            return table;
+
         }
     }
 }
