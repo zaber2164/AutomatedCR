@@ -141,6 +141,23 @@ namespace AutomatedCR.Controllers
                 return Json(new List<Teacher>(), JsonRequestBehavior.AllowGet);
             }
         }
+        public JsonResult LoadDdlCourse()
+        {
+            try
+            {
+                List<Course> CourseList =
+                    dbEntities.Courses.ToList();
+                if (CourseList.Count > 0)
+                {
+                    return Json(CourseList, JsonRequestBehavior.AllowGet);
+                }
+                else return Json(new List<Course>(), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return Json(new List<Course>(), JsonRequestBehavior.AllowGet);
+            }
+        }
         //[HttpPost]
         public ActionResult ExportExcel()
         {
